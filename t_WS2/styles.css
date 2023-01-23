@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
+    background-color: #3498DB;
+    color: white;
+    padding: 1em;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav li {
+    display: inline-block;
+    margin-right: 1em;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  section {
+    margin: 2em;
+  }
+  
+  #destinations {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .destination-card {
+    width: 30%;
+    margin: 1em;
+    padding: 1em;
+    box-shadow: 2px 2px 5px #ccc;
+  }
+  
+  .destination-card img {
+    width: 100%;
+  }
+  

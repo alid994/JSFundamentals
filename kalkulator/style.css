@@ -1,0 +1,52 @@
+body{
+    background-color: rgb(210, 208, 208);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+div{
+    margin-top: 200px;
+    height: 500px;
+    width: 500px;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 20px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+input{
+    width: 80px;
+    height: 40px;
+    font-size: 24px;
+    text-align: center;
+    margin: 5px;
+}
+label{
+    width: 80px;
+    height: 40px;
+    font-size: 24px;
+    text-align: center;
+    margin: 5px;
+}
+select{
+    width: 80px;
+    height: 40px;
+    font-size: 24px;
+    text-align: center;
+    margin: 5px;
+}
+button{
+    width: 150px;
+    height: 40px;
+    font-size: 24px;
+    text-align: center;
+    margin: 5px;
+}
+p{
+    width: 80px;
+    height: 40px;
+    font-size: 24px;
+    text-align: center;
+    margin: 10px;
+}

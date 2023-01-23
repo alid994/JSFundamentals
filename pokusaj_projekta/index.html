@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="fb_logo.png" alt="facebook"></a>
+        </div>
+        <nav>
+            <ul class="navbar-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html">Profile</a></li>
+                <li><a href="index.html">Messages</a></li>
+            </ul>
+        </nav>
+        <div class="search"> <input type="text" placeholder="Search.."> <button>Search</button></div>
+        <ul class="navbar-menu">
+            <li><a href="index.html">Login</a></li>
+            <li><a href="index.html">Logout</a></li>
+            <li><a href="index.html">Sign in</a></li>
+        </ul>
+    </header>
+
+    <div class="main">
+        <div id="objava">
+            <form action="/form/submit" method="post">
+                <label for="unos">Post something:</label>
+                <br>
+                <textarea id="unos" name="text" rows="" cols=""></textarea>
+                <br/>
+             </form>
+            <button onclick="post()">Post</button>
+        </div>
+    </div>
+
+    <footer>
+        <button>Settings</button>
+        <div class="chat">
+            <p>Chat</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

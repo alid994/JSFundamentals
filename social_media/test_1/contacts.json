@@ -1,0 +1,16 @@
+{
+    "contacts": [
+        {
+            "username": "Jane Smith"
+        },
+        {
+            "username": "Bob Johnson"
+        },
+        {
+            "username": "John Doe"
+        },
+        {
+            "username": "Emma Williams"
+        }
+    ]
+}

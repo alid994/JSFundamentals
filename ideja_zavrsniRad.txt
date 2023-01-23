@@ -1,0 +1,1 @@
+booking aplikaciju sa profilima i chatom gdje korisnici mogu preko poruka razmjenjivati iskustva o objektima i lokacijama!!!

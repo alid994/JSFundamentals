@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Social Media</title>
+  <link rel="stylesheet" type="text/css" href="../styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#profile">Profile</a></li>
+        <li><a href="#messages">Messages</a></li>
+        <li><a href="#settings">Settings</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section id="home">
+    <h1>Welcome to Social Media</h1>
+    <form>
+      <textarea id="post-text" placeholder="What's on your mind?"></textarea>
+      <button id="post-button" type="submit">Post</button>
+    </form>
+    <div id="posts"></div>
+  </section>
+  <section id="profile">
+    <h2>My Profile</h2>
+    <img id="profile-picture" src="https://via.placeholder.com/150x150.png?text=Profile+Picture" alt="Profile Picture">
+    <h3 id="profile-name">John Doe</h3>
+    <p id="profile-bio">Bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna vel tincidunt convallis, urna velit malesuada nulla, id egestas nulla nibh vel elit.</p>
+  </section>
+  <section id="messages">
+    <h2>Messages</h2>
+    <div id="message-threads"></div>
+    <form>
+      <select id="recipient-select">
+          <option value=""></option>
+      </select>
+      <textarea id="message-text" placeholder="Type your message here"></textarea>
+      <button id="send-message-button" type="submit">Send</button>
+    </form>
+  </section>
+  
+  </section>
+  <section id="settings">
+    <h2>Settings</h2>
+    <button id="logout-button" type="button">Log Out</button>
+  </section>
+  <script src="../posts.json"></script>
+  <script src="../script.js"></script>
+  <script src="../messages.js"></script>
+  <script src="../contacts.json"></script>
+  <script src="../expres.js"></script>
+  <script src="../app.js"></script>
+</body>
+</html>
