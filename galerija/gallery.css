@@ -1,0 +1,119 @@
+body {
+    background-color: rgb(222, 222, 222);
+}
+
+h1 {
+    margin: 55px 0 60px 40px;
+    font-size: 50px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: normal;
+}
+
+.photo>p {
+    font-size: 24px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 330px 330px;
+    margin: 5px;
+    gap: 60px;
+
+}
+
+.photo-frame {
+    width: 270px;
+    height: 220px;
+    border-radius: 5%;
+    overflow: hidden;
+    text-align: center;
+    background-color: white;
+    justify-self: center;
+}
+
+.photo {
+    width: 270px;
+    height: 175px;
+    background-color: rgb(73, 132, 228);
+}
+
+img {
+    width: 270px;
+    height: 180px;
+}
+
+body>p {
+    font-size: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 20px 40px;
+}
+
+@media screen and (min-width:425px) and (max-width:992px) {
+
+    h1 {
+        margin: 20px 30px;
+        font-size: 35px;
+    }
+
+    .wrapper {
+        grid-template-columns: repeat(3, 3fr);
+        grid-template-rows: 170px 170px;
+        gap: 50px;
+    }
+
+    .photo {
+        width: 170px;
+        height: 125px;
+    }
+
+    .photo-frame {
+        width: 170px;
+        height: 150px;
+    }
+
+    img {
+        width: 170px;
+        height: 125px;
+    }
+
+    .photo>p {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width:425px) {
+     h1 {
+        font-size: 34px;
+        margin: 30px 90px;
+    }
+    
+    .wrapper {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: 195px;
+        gap: 85px;
+        margin-top: 30px;
+    }
+
+    .photo {
+        width: 230px;
+        height: 150px;
+    }
+
+    .photo-frame {
+        width: 230px;
+        height: 190px;
+    }
+   
+    img {
+        width: 230px;
+        height: 150px;
+    }
+
+    .photo>p {
+        font-size: 22px;
+    }
+
+}
