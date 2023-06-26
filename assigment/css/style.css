@@ -1,0 +1,59 @@
+header {
+    height: 150px;
+}
+
+header a:active {
+    color: black;
+}
+
+.x a {
+    font-size: 22px;
+    margin-left: 50px;
+}
+
+
+#hero-section {
+    background-image: url(../img/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 70vh;
+}
+
+#hero-section p {
+    background-color: #20c997;
+    font-weight: bold;
+    font-size: 34px;
+}
+
+#intro-section img {
+    width: 100px;
+    height: 90px;
+}
+
+@media  (max-width: 768px) {
+    #hero-section {
+        height: 30vh;
+    }
+
+    #hero-section p {
+        font-size: 16px;
+        margin: 0;
+    }
+}
+
+@media  (max-width: 425px) {
+    #hero-section {
+        height: 10vh;
+    }
+
+    #hero-section p {
+        font-size: 12px;
+        margin: 0;
+    }
+}
+
+@media (min-width: 769px) and  (max-width: 1024px) {
+    #hero-section {
+        height: 40vh;
+    }
+}
