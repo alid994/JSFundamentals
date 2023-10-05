@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body onload="onLoadBodyHandle()">
+    <h1>Person</h1>
+    <form id="personForm" action="#" onsubmit="addPerson()">
+        <input required id="name_input" type="text" placeholder="Enter name..."> 
+        <input required id="surname_input" type="text" placeholder="Enter surname...">
+        <input required id="nin_input" type="number" placeholder="Enter nin number...">
+        <label for="birthday_input">Birthday:</label>
+        <input required id="birthday_input" type="date">
+        <input type="submit" value="Add Person">
+    </form>
+    <br>
+    <table class="table table-striped table-hover">
+        <thead>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>JBMG</th>
+            <th>Birthday</th>
+        </thead>
+        <tbody id="person_table_body">
+
+        </tbody>
+    </table>
+
+    <script>
+        class Person{
+            constructor(name, surname, nin, birthday){
+                this.name = name; 
+                this.surname = surname;
+                this.nin = nin; 
+                this.birthday = birthday;
+            }
+        }
+
+        function onLoadBodyHandle(){
+            let persons = [];
+           
+        }
+
+
+        function addPerson(){
+            //preuzmem input html element 
+            const nameInput = document.forms["personForm"]["name_input"];
+            const surnameInput = document.forms["personForm"]["surname_input"];
+            const ninInput = document.forms["personForm"]["nin_input"];
+            const birthdayInput = document.forms["personForm"]["birthday_input"];
+
+            //iz html input elemenata uzmem unesene vrijednosti i prebacim ih u polja objekta
+            let person = new Person(nameInput.value, surnameInput.value, ninInput.value, birthdayInput.value);
+            // key: vrijednost
+            localStorage.setItem(`name${person.nin}`, person.name);
+            localStorage.setItem(`surname${person.nin}`, person.surname);
+            localStorage.setItem(`nin${person.nin}`, person.nin);
+            localStorage.setItem(`birthday${person.nin}`, person.birthday);
+
+            //proslijedm objekat kreiran po šablonu klase person funkciji createTableRow
+            createTableRow(person.nin);
+
+            //čišćenje html input elemenata 
+            nameInput.value = "";
+            surnameInput.value = "";
+            ninInput.value = "";
+            birthdayInput.value="mm/dd/yyyy";
+        }
+
+        function createTableRow(nin){
+            const personTableBody = document.getElementById("person_table_body");
+
+            const tableRow = document.createElement("tr");
+            //name column
+            createDataInRow(tableRow, localStorage.getItem(`name${nin}`)); // <td> person.name  </td>
+            //surname column
+            createDataInRow(tableRow,  localStorage.getItem(`surname${nin}`)); // <td>  person.surname </td>
+            //jbmg column
+            createDataInRow(tableRow,  localStorage.getItem(`nin${nin}`));
+            //birthday column
+            createDataInRow(tableRow,  localStorage.getItem(`birthday${nin}`));
+
+            personTableBody.appendChild(tableRow);
+        }
+
+
+            /*const nameTableData = document.createElement("td");
+            const nameTextNode = document.createTextNode(person.name);
+            nameTableData.appendChild(nameTextNode);
+            tableRow.appendChild(nameTableData);*/
+             /* const surnameTableData = document.createElement("td");
+            const surnameTextNode = document.createTextNode(person.surname);
+            surnameTableData.appendChild(surnameTextNode);
+            tableRow.appendChild(surnameTableData);*/
+                        /*const ninTableData = document.createElement("td");
+            const ninTextNode = document.createTextNode(person.nin);
+            ninTableData.appendChild(ninTextNode);
+            tableRow.appendChild(ninTableData);*/
+                        /*const birthdayData = document.createElement("td");
+            const birthdayTextNode = document.createTextNode(person.birthday);
+            birthdayData.appendChild(birthdayTextNode);
+            tableRow.appendChild(birthdayData);*/
+        function createDataInRow(tableRow, value){
+            const tableData = document.createElement("td");
+            const textNode = document.createTextNode(value);
+            tableData.appendChild(textNode);
+            tableRow.appendChild(tableData);
+        }
+    </script>
+</body>
+</html>

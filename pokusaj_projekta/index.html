@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
     <script src="script.js"></script>
 </head>
 
@@ -32,13 +34,14 @@
 
     <div class="main">
         <div id="objava">
-            <form action="/form/submit" method="post">
+            <form id="forma" name="form" action="/form/submit" method="post">
                 <label for="unos">Post something:</label>
                 <br>
                 <textarea id="unos" name="text" rows="" cols=""></textarea>
                 <br/>
              </form>
-            <button onclick="post()">Post</button>
+            <button onclick="postovi()">Post</button>
+            <button id="post-btn">Get</button>
         </div>
     </div>
 
@@ -48,6 +51,7 @@
             <p>Chat</p>
         </div>
     </footer>
+
 
 </body>
 

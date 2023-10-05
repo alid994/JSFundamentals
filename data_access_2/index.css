@@ -1,0 +1,21 @@
+.custom-modal {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    background: rgba(0, 0, 0, 0.75);
+}
+
+.todo-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.todo {
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+}

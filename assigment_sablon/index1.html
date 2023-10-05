@@ -28,13 +28,10 @@
             this.phone +
             "<br>" +
             "Course: " +
-            this.course + 
-            "<br>" +
-            "<br>"
+            this.course
           );
         };
       }
-
       //let student1 = new Student ("Adnan Adnanović", "Hadželi 56", "061/123-456" , "Arhitektura")
       //let student2 = new Student ("Alen Alić", "Sarajevska 125", "062/456-789" , "Medicina")
       //let student3 = new Student ("Mahir Mehić", "Novopazarska 365", "063/789-123" , "Historija")
@@ -49,18 +46,19 @@
           return response.text();
         })
         .then(function (text) {
-          let studentArray = text.split("\n");
-
-          for (i = 0; i < studentArray.length; i = i + 4) {
-            let studentFields = studentArray.slice(i, i + 4);
-            let student1 = new Student(
-              studentFields[0],
-              studentFields[1],
-              studentFields[2],
-              studentFields[3]
+          let studentArray = text.split("\n"); // dobiješ niz ilo je dobro odrađeno
+          const studentFields = 4; // svaki student ima po 4 podatka  name adress phone course
+          for (let i = 0; i < studentArray.length; i += studentFields) {
+            // bitno je proći ovom petljom  da dobiješ komade niza koji imaju po 4 elementa da bi mogao napraviti  objekat studenta po njima
+            const studentData = studentArray.slice(i, i + studentFields); // ovdje dobijam array po 4 elementa jer svaki student ima po 4 el
+            console.log(studentData, "ovo su "); // ovo izbriši al samo da vidis šta si morao dobiti  za svaki krug petlje dobiješ po 4 elementa
+            let student = new Student(
+              studentData[0],
+              studentData[1],
+              studentData[2],
+              studentData[3]
             );
-            console.log(studentFields[0],"br",studentFields[1],studentFields[2],studentFields[3],"br",studentFields[i]);
-            document.body.innerHTML += student1.getInfo();
+            document.body.innerHTML += student.getInfo(); // sad ukoliko ima 10000 ili 50 studenata svaki ce se prikazati na dokumentu
           }
         })
         .catch(function (err) {

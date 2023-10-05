@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
+</head>
+<body class="w-100 h-100">
+    <div class="w-100 h-100 gap-3 d-flex align-items-center flex-column">
+        <div class="d-flex flex-column align-items-center p-4 bg-primary w-100 text-white">
+            <h1>ToDo Stavke</h1>
+            <span>Alija Dinar</span>
+            <span>aljo_dozer@hotmail.com</span>
+        </div>
+        <button class="btn btn-success" id="dodajDugme">Dodaj</button>
+        <div id="todo-container" class="todo-container w-100">
+
+        </div>
+
+        <div id="modal" class="w-100 h-100 custom-modal justify-content-center align-items-center">
+            <div class="d-flex flex-column gap-3 p-5 bg-white w-50">
+                <span>Dodavanje ToDo Stavke</span>
+                <input id="unesi-naslov" type="text" class="form-control" placeholder="Title">
+                <input id="unesi-opis" type="text" class="form-control" placeholder="Description">
+                <div class="d-flex justify-content-end gap-2">
+                    <button  id="ponisti-dugme" class="btn btn-danger">Poništi</button>
+                    <button id="spasi-dugme" class="btn btn-success">Spasi</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

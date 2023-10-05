@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz</title>
+</head>
+<body style="margin: 20px; padding: 20px;">
+    <div id="quiz-container"></div>
+
+    <script>
+        fetch('https://www.link-elearning.com/linkdl/coursefiles/1470/quiz.json')
+            .then(response => response.json())
+            .then(data => {
+                const quizContainer = document.getElementById('quiz-container');
+
+                for (let key in data.quiz) {
+                    if (data.quiz.hasOwnProperty(key)) {
+                        
+                        const questionData = data.quiz[key];
+
+                        const questionDiv = document.createElement('div');
+                        
+                        const questionText = document.createElement('h2');
+                        questionText.textContent =`Question ${key}: `+ questionData.question;
+                        questionDiv.appendChild(questionText);
+
+                        questionData.options.forEach((option, index) => {
+                            var radioInput = document.createElement('input');
+                            radioInput.type = 'radio';
+                            radioInput.name = key;
+                            radioInput.value = option;
+                            if (radioInput.value ===localStorage.getItem(key)){
+                                radioInput.checked = localStorage.getItem(key)
+                            };
+
+                            const label = document.createElement('label');
+                            label.textContent = option;
+                            questionDiv.appendChild(radioInput);
+                            questionDiv.appendChild(label);
+                            questionDiv.appendChild(document.createElement('br'));
+                            radioInput.addEventListener("change", function(option) {
+                                localStorage.setItem(key, radioInput.value)
+                            });
+
+                            
+
+                        });
+
+
+                        quizContainer.appendChild(questionDiv);
+                    }
+                }
+
+
+            })
+            .catch(error => {
+                console.error('Error fetching quiz data:', error);
+            });
+    </script>
+</body>
+</html>
